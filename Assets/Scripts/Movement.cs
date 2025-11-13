@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
+
         // Update animation parameters
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         anim.SetBool("IsJumping", !isGrounded);
@@ -54,12 +55,13 @@ public class PlayerMovement : MonoBehaviour
 
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        Debug.Log("Grounded: " + isGrounded);
+
     }
 
     void OnDrawGizmosSelected()
     {
         if (groundCheck == null) return;
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+  
     }
 }
