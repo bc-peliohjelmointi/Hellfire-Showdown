@@ -819,7 +819,7 @@ GameObject:
   - component: {fileID: 879996721}
   - component: {fileID: 879996720}
   - component: {fileID: 879996722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,10 +1080,10 @@ MonoBehaviour:
   moveSpeed: 10
   jumpForce: 10
   groundCheck: {fileID: 362572384}
-  groundRadius: 50
+  groundRadius: 2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
 --- !u!95 &1187214857
 Animator:
   serializedVersion: 7
