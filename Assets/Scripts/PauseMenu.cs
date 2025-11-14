@@ -5,6 +5,19 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     private bool isPaused = false;
+    public GameObject settingsMenu;
+
+    public void OpenSettings()
+    {
+        pauseMenuUI.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
 
     public void TogglePause()
     {
