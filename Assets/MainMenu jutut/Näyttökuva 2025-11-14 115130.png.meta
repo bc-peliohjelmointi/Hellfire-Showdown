@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 537ce19a54f03ee49b256fdafc7a9eeb
+guid: 38645e8f8bd7e2f4bb7ea18ba8c8f4b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8500189675535593696
-    second: "N\xE4ytt\xF6kuva 2025-11-14 113005_0"
+      213: -1124170254624017062
+    second: "N\xE4ytt\xF6kuva 2025-11-14 115130_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "N\xE4ytt\xF6kuva 2025-11-14 113005_0"
+      name: "N\xE4ytt\xF6kuva 2025-11-14 115130_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 919
-        height: 615
+        width: 353
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e0fdb5597db6f570800000000000000
-      internalID: 8500189675535593696
+      spriteID: a55331a0c152660f0800000000000000
+      internalID: -1124170254624017062
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "N\xE4ytt\xF6kuva 2025-11-14 113005_0": 8500189675535593696
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
