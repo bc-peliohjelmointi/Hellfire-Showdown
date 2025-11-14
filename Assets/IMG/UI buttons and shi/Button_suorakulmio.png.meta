@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Button_suorakulmio_0: 5753736707662096835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
