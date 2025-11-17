@@ -31,9 +31,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-
-        // Animator ground/jump logic
-        anim.SetBool("IsGrounded", isGrounded);
         anim.SetBool("IsJumping", !isGrounded);
 
         // Attack cooldown
@@ -55,14 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         // MOVEMENT
         moveInput = Input.GetAxisRaw("Horizontal");
-
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-
-        // FLIP CHARACTER
-        if (moveInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (moveInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
 
         // JUMP
         if (Input.GetButtonDown("Jump") && isGrounded)
