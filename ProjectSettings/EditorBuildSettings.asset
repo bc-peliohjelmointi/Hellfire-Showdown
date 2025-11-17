@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 18a55d6421cb28e4abecd0d6b6c9bd97
   - enabled: 1
-    path: Assets/Scenes/SettingScene.unity
+    path: Assets/Scenes/SettingsMenu.unity
     guid: de054b95003e0c940a589aaca7969791
   - enabled: 1
     path: Assets/Scenes/SofiaScene.unity
