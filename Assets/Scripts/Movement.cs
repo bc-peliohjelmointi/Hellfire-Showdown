@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     private bool isGrounded;
     private bool isAttacking = false;
+    private bool isShooting = false;
 
     void Start()
     {
@@ -41,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J) && attackTimer <= 0f && !isAttacking)
         {
             Attack();
+        }
+        if (Input.GetKeyDown(KeyCode.B) && attackTimer <= 0f && !isShooting)
+        {
+            Shot();
         }
 
         // Stop movement during attack
@@ -78,5 +83,15 @@ public class PlayerMovement : MonoBehaviour
     void EndAttack()
     {
         isAttacking = false;
+    }
+    void Shot() 
+    {
+        isShooting = true;
+        anim.SetTrigger("Shot");
+        Invoke(nameof(EndShot), 0.3f);
+    }
+    void EndShot()
+    {
+        isShooting = false;
     }
 }
