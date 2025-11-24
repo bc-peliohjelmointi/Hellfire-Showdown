@@ -12,7 +12,7 @@ public class BowShooter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canShoot)
+        if (Input.GetKeyDown(KeyCode.B) && canShoot)
         {
             Debug.Log("Pressed shoot!");
             StartCoroutine(DelayedShoot());
