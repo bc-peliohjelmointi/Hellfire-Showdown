@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    public float damage = 25f;  // how much damage this arrow deals
     public float speed = 10f;
     public float lifeTime = 3f;
 
     private Vector2 direction;
 
+    private void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
+
     public void Shoot(Vector2 dir)
     {
         direction = dir.normalized;
-        Destroy(gameObject, lifeTime); // auto-despawn
     }
 
     private void Update()
@@ -24,8 +29,14 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Add hit logic here
-        Debug.Log("Hit: " + collision.name);
+        // Check if the object has a health script
+        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
         Destroy(gameObject);
     }
 }
