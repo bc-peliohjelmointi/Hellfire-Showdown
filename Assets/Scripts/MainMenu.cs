@@ -1,22 +1,42 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
+    public GameObject settingsMenu;
+    public GameObject mainMenuUI; // Play, Settings, Quit -valikko
+
+    // Play-nappi
     public void PlayGame()
     {
-        SceneManager.LoadScene("SofiaScene"); // Vaihda oma peliscenesi nimi
+        SceneManager.LoadScene("SofiaScene");
+        // Vaihda "GameScene" omaksi pelisi skenen nimeksi
     }
 
+    public void OpenSettingMenu()
+    {
+        SceneManager.LoadScene("SettingsMenu");
+        // Vaihda "GameScene" omaksi pelisi skenen nimeksi
+    }
+
+    // Settings-nappi
     public void OpenSettings()
     {
-        SceneManager.LoadScene("SettingsScene"); // Vaihda oman asetusscenesi nimi
+        mainMenuUI.SetActive(false);
+        settingsMenu.SetActive(true);
     }
 
+    // Back-nappi asetuksissa
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
+        mainMenuUI.SetActive(true);
+    }
+
+    // Quit-nappi
     public void QuitGame()
     {
-        Debug.Log("Quit game!");
         Application.Quit();
+        Debug.Log("Quit Game (Toimii vain buildissa)");
     }
 }
-
