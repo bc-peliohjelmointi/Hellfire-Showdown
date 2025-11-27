@@ -27,10 +27,12 @@ public class Arrow : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         // Check if the object has a health script
-        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
 
         if (enemy != null)
         {
