@@ -1,44 +1,53 @@
 using UnityEngine;
 using System.Collections;
 
-public class BowShooter : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     public GameObject arrowPrefab;
     public Transform shootPoint;
 
-    public float shootDelay = 1.05f;  // time until release in animation
-    public float shootCooldown = 1.2f; // time between shots
+    public float shootDelay = 1.05f;
+    public float shootCooldown = 1.2f;
+
     private bool canShoot = true;
+    private DirectionController direction;
+
+    void Start()
+    {
+        direction = GetComponent<DirectionController>();
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.B) && canShoot)
         {
-            Debug.Log("Pressed shoot!");
             StartCoroutine(DelayedShoot());
         }
     }
 
     IEnumerator DelayedShoot()
     {
-        canShoot = false; // lock shooting
-        Debug.Log("Coroutine started");
+        canShoot = false;
 
         yield return new WaitForSeconds(shootDelay);
-        Debug.Log("Reached shoot moment");
-
         ShootArrow();
 
-        // cooldown after the arrow fires
         yield return new WaitForSeconds(shootCooldown);
-        Debug.Log("Cooldown finished");
         canShoot = true;
     }
 
     void ShootArrow()
     {
-        Debug.Log("Shooting arrow!"); // check if this fires
-        GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, shootPoint.rotation);
-        arrow.GetComponent<Arrow>().Shoot(shootPoint.right);
+        // Cache shoot direction instantly
+        Vector2 dir = direction.facingRight ? Vector2.right : Vector2.left;
+
+        // Cache shoot position instantly (before physics updates)
+        Vector3 spawnPos = shootPoint.position;
+
+        // Spawn arrow
+        GameObject arrow = Instantiate(arrowPrefab, spawnPos, Quaternion.identity);
+
+        // Shoot
+        arrow.GetComponent<Arrow>().Shoot(dir);
     }
 }

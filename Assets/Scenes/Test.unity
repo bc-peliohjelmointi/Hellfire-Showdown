@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1645756538883357302, guid: b00f6f8154319e049a3b3beec03a511c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8197398901598824945, guid: b00f6f8154319e049a3b3beec03a511c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.05
@@ -1272,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 6861388130611165227, guid: 1cd3e770e7b2ea94896b0be1f8dfae66, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1370,20 +1378,36 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3063112719403352751, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063112719403352751, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3784657045454700160, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
       propertyPath: currentHealth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947557521778091225, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6261577156831932592, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6261577156831932592, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261577156831932592, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141929515279465228, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1435,7 +1459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  knockbackForce: 15
+  knockbackForce: 5
   playerAttack: {fileID: 8924211965774967936}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

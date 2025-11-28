@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
 public class DirectionController : MonoBehaviour
-
 {
-
     public float moveSpeed = 15f;
     private Rigidbody2D rb;
-    private bool facingRight = true;
+
+    public bool facingRight = true;
+    private float cachedInput = 0f;
 
     void Awake()
     {
@@ -15,23 +15,26 @@ public class DirectionController : MonoBehaviour
 
     void Update()
     {
-        float input = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(input * moveSpeed, rb.linearVelocity.y);
+        // Read input here
+        cachedInput = Input.GetAxisRaw("Horizontal");
 
-        // Flipataan kun suunta vaihtuu
-        if (input > 0 && !facingRight) Flip();
-        if (input < 0 && facingRight) Flip();
+
+    }
+
+    void FixedUpdate()
+    {
+        // Move in physics update
+        rb.linearVelocity = new Vector2(cachedInput * moveSpeed, rb.linearVelocity.y);
+        // Flip based on input
+        if (cachedInput > 0 && !facingRight) Flip();
+        if (cachedInput < 0 && facingRight) Flip();
     }
 
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Vector3 s = transform.localScale;
+        s.x *= -1;
+        transform.localScale = s;
     }
 }
-
-
-
-
