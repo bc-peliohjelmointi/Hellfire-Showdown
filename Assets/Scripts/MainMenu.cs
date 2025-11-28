@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Play-nappi
     public void PlayGame()
     {
-        SceneManager.LoadScene("SofiaScene");
+        SceneManager.LoadScene("Test");
         // Vaihda "GameScene" omaksi pelisi skenen nimeksi
     }
 
