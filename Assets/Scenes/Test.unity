@@ -395,7 +395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: -1000
   m_Sprite: {fileID: 5548947432905161908, guid: a6e089e0d3e65714abd1823e6e88b2be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -416,8 +416,8 @@ Transform:
   m_GameObject: {fileID: 540251341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019, y: -0.4552, z: 0}
-  m_LocalScale: {x: 1.1654245, y: 1.0889, z: 1}
+  m_LocalPosition: {x: -0.019, y: -0.569, z: 0}
+  m_LocalScale: {x: 1.1654245, y: 1.1111135, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -908,6 +908,67 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &5257523925895177612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 720314228148350962, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_Name
+      value: Enemy(Berserker)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.38821
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.235579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.007468234
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642840548022576485, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022651251062198573, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8924211965774967949}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
 --- !u!1001 &8067802521580246488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 2572351823076891047, guid: 1cd3e770e7b2ea94896b0be1f8dfae66, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 1645756538883357302, guid: b00f6f8154319e049a3b3beec03a511c, type: 3}
+      objectReference: {fileID: 720314228148350962, guid: 88fafe9bca0d6ec4e9cf6814c0962528, type: 3}
     - target: {fileID: 2572351823076891047, guid: 1cd3e770e7b2ea94896b0be1f8dfae66, type: 3}
       propertyPath: enemiesPerWave
       value: 1
@@ -1161,6 +1222,11 @@ MonoBehaviour:
   damage: 5
   knockbackForce: 5
   playerAttack: {fileID: 8924211965774967936}
+--- !u!224 &8924211965774967949 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 332501998859319676, guid: bc6a5d726b4e48d43ad2d8a78af8eef8, type: 3}
+  m_PrefabInstance: {fileID: 8924211965774967933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1174,3 +1240,4 @@ SceneRoots:
   - {fileID: 1762865137}
   - {fileID: 8067802521580246488}
   - {fileID: 540251343}
+  - {fileID: 5257523925895177612}
