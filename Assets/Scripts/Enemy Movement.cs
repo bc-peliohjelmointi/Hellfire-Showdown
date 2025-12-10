@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float moveSpeed = 2f;              // Speed of the enemy
-    public Transform target;                  // Target to follow (Player)
+    public float moveSpeed = 2f;              // Enemy movement speed
+    public Transform target;                  // Player target
+    private Animator animator;                // Reference to Animator
 
     void Start()
     {
+        // Get Animator component
+        animator = GetComponent<Animator>();
+
         // Automatically find player by tag
         if (target == null)
         {
@@ -22,7 +26,12 @@ public class EnemyMovement : MonoBehaviour
 
         // Move toward the target
         Vector2 direction = (target.position - transform.position).normalized;
+
+        // Apply movement
         transform.position += (Vector3)direction * moveSpeed * Time.deltaTime;
+
+        // Animation: send speed to Animator
+        animator.SetFloat("Speed", direction.magnitude);
 
         // Optional: Flip sprite depending on direction
         if (direction.x != 0)
