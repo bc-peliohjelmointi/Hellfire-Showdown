@@ -6,20 +6,39 @@ public class EnemyAttack : MonoBehaviour
     public float attackCooldown = 1f;
 
     private float nextAttackTime = 0f;
+<<<<<<< Updated upstream
+=======
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInParent<Animator>();
+    }
+>>>>>>> Stashed changes
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (Time.time < nextAttackTime)
-            return;
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
 
-        PlayerHealth ph = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
 
-        if (ph != null)
+        if (Time.time >= nextAttackTime)
         {
+<<<<<<< Updated upstream
             ph.TakeDamage(damage);
             nextAttackTime = Time.time + attackCooldown;
 
           
+=======
+            // Deal damage
+            player.TakeDamage(damage);
+
+            // Trigger attack animation
+            animator.SetTrigger("Attacking");
+
+            // New cooldown
+            nextAttackTime = Time.time + attackCooldown;
+>>>>>>> Stashed changes
         }
     }
 }
