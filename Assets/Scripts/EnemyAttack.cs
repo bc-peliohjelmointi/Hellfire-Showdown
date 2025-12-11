@@ -26,10 +26,21 @@ public class EnemyAttack : MonoBehaviour
         {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             ph.TakeDamage(damage);
             nextAttackTime = Time.time + attackCooldown;
 
           
+=======
+            // Deal damage
+            player.TakeDamage(damage);
+
+            // Trigger attack animation
+            animator.SetTrigger("Attacking");
+
+            // New cooldown
+            nextAttackTime = Time.time + attackCooldown;
+>>>>>>> Stashed changes
 =======
             // Deal damage
             player.TakeDamage(damage);
