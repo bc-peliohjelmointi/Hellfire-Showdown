@@ -10,35 +10,25 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (Time.time < nextAttackTime)
-            return;
+        PlayerHealth player = other.GetComponent<PlayerHealth>();
 
-        PlayerHealth ph = other.GetComponent<PlayerHealth>();
+        if (player == null) return;
 
-        if (ph != null)
+        if (Time.time >= nextAttackTime)
         {
-            // Play attack animation
-            animator.SetBool("Melee", true);
-
             // Deal damage
-            ph.TakeDamage(damage);
+            player.TakeDamage(damage);
 
-            // Start cooldown
+            // Trigger attack animation
+            animator.SetTrigger("Attacking");
+
+            // New cooldown
             nextAttackTime = Time.time + attackCooldown;
-
-            // Stop the attack animation after a short moment
-            StartCoroutine(StopAttackAnimation());
         }
-    }
-
-    private System.Collections.IEnumerator StopAttackAnimation()
-    {
-        yield return new WaitForSeconds(0.2f); // depends on your attack animation length
-        animator.SetBool("IsAttacking", false);
     }
 }
