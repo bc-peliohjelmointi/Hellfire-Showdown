@@ -4,13 +4,16 @@ public class Enemy : MonoBehaviour
 {
     public EnemyWaveManager manager;
 
+    public int health = 1;
+
     public void TakeDamage(int dmg)
     {
-        // Tämä on vain esimerkki – käytä omaa damage-logiikkaasi
-        Die();
+        health -= dmg;
+        if (health <= 0)
+            Die();
     }
 
-    public void Die()
+    void Die()
     {
         manager.EnemyDied();
         Destroy(gameObject);

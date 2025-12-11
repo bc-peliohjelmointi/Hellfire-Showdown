@@ -4,5 +4,5 @@ using UnityEngine;
 public class WaveData
 {
     public GameObject enemyPrefab;
-    public int enemyCount = 5;
+    public int enemyCount;
 }
